@@ -4,14 +4,24 @@ class Solution {
             
             String[] log_a= a.split(" ",2);
             String[] log_b= b.split(" ",2);
+            //             int compare(T o1, T o2) {
+            //             if (o1 < o2)
+            //                 return -1;
+            //             else if (o1 == o2)
+            //                 return 0;
+            //             else // o1 > o2
+            //                 return 1;
+            //             }
             
             if(!Character.isDigit(log_a[1].charAt(0)) && !Character.isDigit(log_b[1].charAt(0))){
                 int comp=log_a[1].compareTo(log_b[1]);
                 return comp==0?log_a[0].compareTo(log_b[0]):comp ;
             }
+            //check if a is letter and b is digit
             else if(!Character.isDigit(log_a[1].charAt(0)) && Character.isDigit(log_b[1].charAt(0))){
                 return -1;
             }
+            /check if a is digit and b is letter
              else if(Character.isDigit(log_a[1].charAt(0)) &&  !Character.isDigit(log_b[1].charAt(0))){
                 return 1;
             }
